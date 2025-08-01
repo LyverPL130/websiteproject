@@ -1,11 +1,12 @@
-body {
+
+html, body {
   text-align: center;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(135deg, #1a1a1a, #000000);
+  background:#000000;
   color: #e0e0e0;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Noto Sans", monospace;
   margin: 0;
   padding: 0;
   height: 100%;
@@ -13,126 +14,27 @@ body {
   overflow-x: hidden;
 }
 
-.navbar {
-  position: sticky;
-  z-index: 100;
-  top: 0;
-  min-height: 110px;
-  box-sizing: border-box;
-  background: linear-gradient(135deg, #444, #222);
-  color: white;
-  padding: 15px 25px;
-  justify-content: left;
-  display: flex;
-  align-items: center;
-  height: 8vh;
-}
-
-.navbar .home {
-  background-color: #383838;
-  border: 3px solid #252525;
-  width: auto;
-  height: auto;
-  min-width: 120px;
-  display: flex;
-  flex-direction: row;
-  margin-right: 25px;
-  padding: 5px;
-  cursor: pointer;
-  border-radius: 10px;
-  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.navbar .home:hover {
-  background-color: #4a4a4a;
-  border-color: #383838;
-  box-shadow: 0 4px 15px rgba(180, 180, 180, 0.3);
-}
-
-.navbar .logo-home {
-  border: none;
-  outline: none;
-  background: none;
-  filter:
-    drop-shadow(0 0 10px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 25px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 40px rgba(255, 255, 255, 0.3));
-  width: 35px;
-  height: auto;
-  object-fit: contain;
-  display: block;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-right: 10px;
-  transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.navbar .home:hover .logo-home {
-  filter:
-    drop-shadow(0 0 8px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 20px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 40px rgba(255, 255, 255, 0.6));
-  transform: scale(1.05);
-}
-
-.navbar .home span {
-  width: auto;
-  white-space: nowrap;
-  color: white;
-  text-decoration: none;
-  font-size: 1em;
-  margin-right: 0;
-  transition: color 0.3s ease;
-}
-
-.navbar .home:hover span {
-  color: #81d4fa;
-}
-
-.navbar a {
-  color: white;
-  text-decoration: none;
-  margin-right: 25px;
-  font-size: 2em;
-  transition: color 0.3s ease;
-}
-
-.navbar a:hover {
-  color: #81d4fa;
-}
-
 .title_content {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-shrink: 0;
-  flex-basis: auto;
   width: 100%;
   height: 100vh;
 }
-
 .title_content h1 {
-  font-size: 4em;
-  filter:
-    drop-shadow(0 0 3px rgba(255, 255, 255, 0.548)) drop-shadow(0 0 7px rgba(255, 255, 255, 0.397)) drop-shadow(0 0 10px rgba(255, 255, 255, 0.253));
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 1000;
+    font-size: 5vw;
 }
-
 .title_content h2 {
-  font-size: 2em;
-}
-
-.logo {
-  width: 800px;
-  height: 300px;
-  filter:
-    drop-shadow(0 0 10px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 25px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 40px rgba(255, 255, 255, 0.3));
-  background-image: url('../asset/LogoText.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+    font-size: 3vw;
 }
 .CopyRight {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
+    bottom: 0;
+    left: 0;
     width: auto;
     padding: 10px;
     color: #e0e0e0;
@@ -140,110 +42,19 @@ body {
     line-height: 1.5;
     text-align: left;
 }
-
-.CopyRight p {
-    margin: 0;
-    padding: 0;
-}
-.description_content {
-  flex-shrink: 0;
-  flex-basis: auto;
-  background: #6d6d6d;
-}
-
-.project_list_content {
-  flex-shrink: 0;
-  flex-basis: auto;
-  background: #6d6d6d;
-}
-
-footer {
-  display: flex;
-  flex-direction: column;
-}
-
-.about-us-content {
-  width: 100%;
-  justify-content: space-evenly;
-  display: flex;
-  flex-direction: row;
-}
-
-.footer-list {
-  background-color: #414141;
-  border: 3px solid #252525;
-  border-top: none;
-  width: 100%;
-  justify-content: space-evenly;
-  display: flex;
-  flex-direction: row;
-}
-
-.about-us-content {
-  width: 100%;
-  background-color: #414141;
-  border: 3px solid #252525;
-}
-
-.footer-about-us {
-  width: 40%;
-  border-right: 2px solid #252525;
-}
-
-.thelight-logo-footer {
-  margin: 20px;
-  width: 60%;
-  height: auto;
-}
-
-.footer-content h1 {
-  color: #90c5ce;
-  font-size: 2em;
-}
-
-.footer-content h2 a {
-  color: #ffffff;
-  font-size: 1em;
-  transition: color 0.3s ease;
-  text-decoration: none;
-}
-
-.footer-content h2 a:hover {
-  color: #81d4fa;
-}
-
-.footer-about-us a {
-  text-decoration: none;
-  color: #90c5ce;
-  transition: color 0.3s ease;
-}
-
-.footer-about-us a:hover {
-  color: #25baff;
-}
-.content-footer {
-  background-color: #414141;
-  border: 3px solid #252525;
-  border-top: none;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-.content-footer h2 a {
-  color: #81d4fa;
-  font-size: 1em;
-  transition: color 0.3s ease;
-  text-decoration: none;
-}
-
-.content-footer h2 a:hover {
-  color: #25baff;
-}
-.text-content {
-  min-height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(31, 31, 31);
+@media screen and (max-width: 767px) {
+  .title_content {
+    height:70vh;
+  }
+  .title_content h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    font-size: 6vw;
+  }
+  .title_content h2 {
+    font-size: 5vw;
+  }
+  .CopyRight {
+    font-size: 2vw;
+  }
 }

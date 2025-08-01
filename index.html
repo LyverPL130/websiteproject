@@ -4,96 +4,49 @@
 <head>
     <title>The Light 工作室</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="./CSS/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/index.css">
+    <link rel="stylesheet" href="/CSS/navbar.css">
     <link rel="icon" href="/asset/LogoIcon.png" type="image/x-icon">
 </head>
 
 <body>
     <nav class="navbar">
-        <a href="./index.html" class="home">
-            <img src="./asset/LogoIcon.png" alt="首頁圖示" class="logo-home">
+        <a href="/index.html" class="home">
+            <img src="/asset/LogoIcon.png" class="logo-home">
             <span>首頁</span>
         </a>
-        <a href="./project.html">專案</a>
-        <a href="./docs.html">文檔</a>
+        <a href="/project.html">專案</a>
+        <a href="/docs.html">文檔</a>
         <a href="#">支援</a>
         <a href="/team/">團隊</a>
         <span class="navbar-extend">≡</span>
     </nav>
-    <nav class="navbar-MBF">
-        <span class="navbar-MBF-extend">≡</span>
+    <nav class="mobile-menu">
+        <button id="mobile-menu">☰</button>
+        <div id="menu-content" class="menu-content">
+            <a class="linka" href="/">首頁</a>
+            <a class="link" id="project" href="/team/project/">專案</a>
+            <a class="link" id="docs" href="/docs/">文檔</a>
+            <a class="linka" href="/team/get-support.html">支援</a>
+            <a class="link" id="team">團隊</a>
+            <div class="a-content" id="teamdiv">
+                <a href="/team/">團隊首頁</a>
+                <a href="/team/project/">專案</a>
+                <a href="/team/about-us.html">關於我們</a>
+                <a href="/team/contact-us.html">聯絡我們</a>
+                <a href="/team/get-support.html">取得支援</a>
+                <a href="/team/members.html">團隊成員</a>
+            </div>
+        </div>
     </nav>
     <div class="title_content">
         <div class="logo"></div>
         <h1>The Light 工作室</h1>
         <h2>探索、開發、創造</h2>
-        <div class="CopyRight">
-            <p>© 2025-2025<br>The Light Office. 版權所有，盜版必究</p>
-        </div>
+            <p class="CopyRight">© 2025-2025<br>The Light Office. 版權所有，盜版必究</p>
     </div>
-    <div class="description_content">
-        <h1>The Light</h1>
-        <h2>開發虛無，打造優質的產品</h2>
-        <h2>開拓無限可能，鑄就卓越精品</h2>
-        <h2>我們視每一片「虛無」的畫布為創作的起點。</h2>
-        <h2>我們相信，藝術的真諦在於從無到有，以獨特的視角和匠心工藝，雕琢出充滿生命力的優質作品。</h2>
-        <h2>在這裡，你將看到創意如何被點亮，並感受每一個細節所散發出的非凡光芒。</h2>
-    </div>
-    <div class="project_list_content">
-        <h1>這是我們的專案</h1>
-        <h2>每個作品都投入了無限心血。</h2>
-        <div class="project-content">
-            <img src="" alt="Lingent智語" class="project-icon">
-            <h3>Lingent智語</h3>
-            <p>一款結合創新思想的現代化聊天互動機器人。</p>
-            <h4>分類: <a href="https://zh.wikipedia.org/zh-tw/Discord#%E6%A9%9F%E5%99%A8%E4%BA%BA">Discord 機器人</a></h4>
-            <button class="project-more">查看詳情>></button>
-        </div>
-        <div class="project-content">
-            <img src="" alt="Lingent智語" class="project-icon">
-            <h3>Lingent智語</h3>
-            <p>一款結合創新思想的現代化聊天互動機器人。</p>
-            <h4>分類: <a href="https://zh.wikipedia.org/zh-tw/Discord#%E6%A9%9F%E5%99%A8%E4%BA%BA">Discord 機器人</a></h4>
-            <button class="project-more">查看詳情>></button>
-        </div>
-    </div>
-    <footer>
-        <div class="about-us-content">
-            <div class="footer-about-us">
-                <h1><a href="./about-us.html">關於我們</a></h1>
-                <h2>我們是The Light Office，致力於打造結合創新思想的專案，突破傳統枷鎖，帶來新的一盞燈。<br>我們的得意專案:<a
-                        href="./project/index.html">Lingent智語</a> : 一款獨一無二的Discord機器人，如有合作也歡迎洽談。</h2>
-            </div>
-            <img src="./asset/LogoText.png" alt="工作室Logo" class="thelight-logo-footer">
-        </div>
-        <div class="footer-list">
-            <div class="footer-content">
-                <h1>詳細資訊</h1>
-                <h2><a href="./contact-us.html">聯繫我們</a></h2>
-                <h2><a href="./get-support.html">取得幫助</a></h2>
-                <h2><a href="./team.html">團隊成員</a></h2>
-                <h2><a href="./join-us.html">加入團隊</a></h2>
-            </div>
-            <div class="footer-content">
-                <h1>專案詳情</h1>
-                <h2><a href="./project/lingent.html">智語Lingent</a></h2>
-                <h2>...</h2>
-                <h2><a href="./project/index.html">專案列表</a></h2>
-                <h2><a href="./cooperate/negotiate.html">合作洽談</a></h2>
-            </div>
-            <div class="footer-content">
-                <h1>相關文檔</h1>
-                <h2><a href="./docs.html">文檔首頁</a></h2>
-            </div>
-        </div>
-        <div class="content-footer">
-            <h2><a href="./terms/TERMofSERVICE.html">《服務協議》</a></h2>
-            <h2><a href="./terms/PRIVACY.html">《隱私協議》</a></h2>
-        </div>
-        <div class="text-content">
-            <p class="footer-text">© 2025-2025 The Light Office. 版權所有，盜版必究</p>
-        </div>
-    </footer>
+     <script src="/JS/nav.js"></script>
 </body>
 
 </html>
