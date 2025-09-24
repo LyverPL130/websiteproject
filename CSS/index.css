@@ -21,7 +21,7 @@ html, body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 }
 .title_content h1 {
     font-family: 'Open Sans', sans-serif;
@@ -44,7 +44,9 @@ html, body {
 }
 @media screen and (max-width: 767px) {
   .title_content {
-    height:70vh;
+    min-height: 70vh;
+    max-height:70vh;
+    height: 70vh;
   }
   .title_content h1 {
     font-family: 'Open Sans', sans-serif;

@@ -83,113 +83,12 @@
 .navbar .home:hover span {
     color: #81d4fa;
 }
-footer {
-  display: flex;
-  flex-direction: column;
-}
-
-.about-us-content {
-  width: 100%;
-  justify-content: space-evenly;
-  display: flex;
-  flex-direction: row;
-}
-
-.footer-list {
-  background-color: #414141;
-  border: 3px solid #252525;
-  border-top: none;
-  width: 100%;
-  justify-content: space-evenly;
-  display: flex;
-  flex-direction: row;
-}
-
-.about-us-content {
-  width: 100%;
-  background-color: #414141;
-  border: 3px solid #252525;
-}
-
-.footer-about-us {
-  width: 40%;
-  border-right: 2px solid #252525;
-}
-.footer-about-us h1 {
-    font-size: 2em;
-}
-.about-us-content h2 {
-    font-size: 1.5em;
-}
-.thelight-logo-footer {
-  margin: 20px;
-  width: 60%;
-  height: auto;
-}
-
-.footer-content h1 {
-  color: #90c5ce;
-  font-size: 2em;
-}
-
-.footer-content h2 {
-    font-size: 1.5em;
-}
-.footer-content h2 a {
-  color: #ffffff;
-  font-size: 1em;
-  transition: color 0.3s ease;
-  text-decoration: none;
-}
-
-.footer-content h2 a:hover {
-  color: #81d4fa;
-}
-
-.footer-about-us a {
-  text-decoration: none;
-  color: #90c5ce;
-  transition: color 0.3s ease;
-}
-
-.footer-about-us a:hover {
-  color: #25baff;
-}
-.content-footer {
-  background-color: #414141;
-  border: 3px solid #252525;
-  border-top: none;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-.content-footer h2 {
-    font-size: 1.5em;
-}
-.content-footer h2 a {
-  color: #81d4fa;
-  font-size: 1em;
-  transition: color 0.3s ease;
-  text-decoration: none;
-}
-
-.content-footer h2 a:hover {
-  color: #25baff;
-}
-.text-content {
-  min-height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(31, 31, 31);
-}
-
 #menu-content {
   position: fixed;
   top: 0;
-  left: -40vw;
+  left: -45vw;
   width: 40vw;
+  padding: 10px;
   height: 100vh;
   background-color: #4a4a4a;
   transition: left 0.5s ease; 
@@ -246,7 +145,91 @@ footer {
 }
 #mobile-menu.menu-open{
   transition: left 0.5s ease; 
-  left: 41vw;
+  left: 46vw;
+}
+
+footer  {
+  margin-top: 10px;
+  width: 100%;
+}
+.plate {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-content: center;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.plate .down-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-content: center;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+.plate .up-row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.plate .address-content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+.plate .footer-CopyRight-content {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+.row{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-content: center;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+.row h1 {
+  color:#81d4fa;
+  font-size: 1.5em;
+}
+.row h2, .row a{
+  color: #e2e2e2;
+  text-decoration: none;
+  font-size: 1em;
+  transition: color 0.3s ease;
+}
+.row a:hover{
+  color: #8697a7;
+}
+.up-row h1 {
+  margin-left: 10px;
+  font-size: 1.8em;
+}
+.up-row  p {
+  margin-left: 20px;
+  font-size: 1em;
+}
+.address-content a, .address-content p{
+  color: #ffffff;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+.address-content a:hover {
+  color:#81d4fa;
 }
 @media screen and (max-width:767px) {
   .navbar {
@@ -272,5 +255,23 @@ footer {
     border: 3px solid #e2e2e2;
     left: 5px;
     transition: left 0.5s ease; 
+  }
+  .plate .down-row {
+    flex-direction: column;
+  }
+  .row h1 {
+    font-size: 1.7em;
+  }
+  .row h2 {
+    font-size: 1.5em;
+  }
+  .up-row h1 {
+    font-size: 1.5em;
+  }
+  .up-row  p {
+    font-size: 0.8em;
+  }
+  .footer-CopyRight-content p {
+    font-size: 0.7em;
   }
 }
