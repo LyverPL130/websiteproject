@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>教師節快樂！- blessing from The Light 工作室</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/asset/LogoIcon.png" type="image/x-icon">
+    <style>
+        html, body {
+        text-align: center;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        color: #e0e0e0;
+        font-family: "Noto Sans", monospace;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+        }
+        #menu-content {
+        position: fixed;
+        top: 0;
+        left: -47vw;
+        width: 40vw;
+        padding: 10px;
+        height: 100vh;
+        background-color: #4a4a4a;
+        transition: left 0.5s ease; 
+        z-index: 1000; 
+        align-items: flex-start;
+        justify-content: left;
+        display: flex;
+        flex-direction: column;
+        }
+        .linka {
+        font-size: 7vw;
+        color: #ffffff;
+        text-decoration: none;
+        transition:color 0.3s ease;
+        }
+        .linka:hover {
+        color: #81d4fa;
+        }
+        .link {
+        font-size: 7vw;
+        color: #ffffff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        }
+        .link.open {
+        color: #81d4fa;
+        }
+        .a-content {
+        max-height: 0;
+        overflow: hidden;
+        align-items: flex-start;
+        justify-content: left;
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        transition: max-height 0.3s ease-in; 
+        }
+        .a-content.open{
+        width: auto;
+        max-height: 100%;
+        }
+        .a-content a {
+        font-size: 5vw;
+        margin-left: 5vw;
+        color: #ffffff;
+        text-decoration: none;
+        transition:color 0.3s ease;
+        }
+        .a-content a:hover {
+        color: #81d4fa;
+        }
+        #menu-content.menu-open {
+        left: 0;
+        }
+        #mobile-menu.menu-open{
+        transition: left 0.5s ease; 
+        left: 48vw;
+        }
+        .mobile-menu {
+            position: fixed;
+            z-index: 100;
+            top: 0;
+            display: block;
+            width: auto;
+            height: auto;
+            display: flex;
+            cursor: pointer;
+            margin: 5px;
+        }
+        #mobile-menu{
+            position: fixed; 
+            background-color: #383838;
+            color: #ffffff;
+            font-size: 5vw;
+            border-radius: 30px;
+            border: 3px solid #e2e2e2;
+            left: 5px;
+            transition: left 0.5s ease; 
+        }
+        .content {
+            min-width: 100%;
+            min-height: 100%;
+            background: linear-gradient(135deg, #141414 0%, #585858 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .Author {
+            color: #e0e0e0a4;
+            font-size:1.2em;
+        }
+        .svg-container {
+            background-color: #465d68;
+            border-radius: 50em;
+            box-shadow: 
+            0 0 5px rgb(252, 252, 252),
+            0 0 15px #ffffffa2,
+            0 0 30px #adadad8a;
+            width: 90vmin;
+            height: 90vmin;
+            max-width: 500px;
+            max-height: 500px;
+        }
+        svg {
+            display: block;
+            margin: 0 auto;
+        }
+        .h1-main-text {
+            font-size: 2.5em;
+            font-weight: bold;
+            fill: aquamarine;
+            font-family: "Noto Sans", monospace;
+            text-shadow: 
+                0 0 1px aquamarine,
+                0 0 2px #6fffe9, 
+                0 0 4px #00FFFF; 
+        }
+        .curved-text {
+            font-family: "Noto Sans", monospace;
+        }
+        .first-circle-text {
+            font-size: 1.2em;
+            fill: #FFEB3B;
+            letter-spacing: 2px;
+            text-anchor: middle; 
+        }
+        .second-circle-text {
+            font-size: 1.3em;
+            fill: #4DD0E1;
+            letter-spacing: 1px;
+            text-anchor: start;
+        }
+        .third-circle-text {
+            font-size: 1.4em;
+            fill: #FF9800;
+            text-anchor: end;
+        }
+        .last-circle-text {
+            font-size: 1.5em;
+            fill: #E91E63;
+            text-anchor: middle; 
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="mobile-menu">
+        <button id="mobile-menu">☰</button>
+        <div id="menu-content" class="menu-content">
+            <a class="linka" href="/">首頁</a>
+            <a class="link" id="project" href="/team/project/">專案</a>
+            <a class="link" id="docs" href="/docs/">文檔</a>
+            <a class="linka" href="/team/get-support.html">支援</a>
+            <a class="link" id="team">團隊</a>
+            <div class="a-content" id="teamdiv">
+                <a href="/team/">團隊首頁</a>
+                <a href="/team/project/">專案</a>
+                <a href="/team/about-us.html">關於我們</a>
+                <a href="/team/contact-us.html">聯絡我們</a>
+                <a href="/team/members.html">團隊成員</a>
+            </div>
+        </div>
+    </nav>
+    <div class="content">
+        <div class="text-content svg-container">
+            <svg viewBox="0 0 500 500">
+                
+                <path id="pathLast" d="M 250, 250 m -230, 0 a 230,230 0 1,1 460,0 a 230,230 0 1,1 -460,0" fill="none" stroke="none"/>
+                <path id="pathThird" d="M 250, 250 m -200, 0 a 200,200 0 1,1 400,0 a 200,200 0 1,1 -400,0" fill="none" stroke="none"/>
+                <path id="pathSecond" d="M 250, 250 m -170, 0 a 170,170 0 1,1 340,0 a 170,170 0 1,1 -340,0" fill="none" stroke="none"/>
+                <path id="pathFirst" d="M 250, 250 m -140, 0 a 140,140 0 1,1 280,0 a 140,140 0 1,1 -280,0" fill="none" stroke="none"/>
+
+                <text x="250" y="250" text-anchor="middle" dominant-baseline="middle" class="h1-main-text">
+                    教師節快樂！
+                </text>
+
+                <text class="curved-text first-circle-text">
+                    <textPath xlink:href="#pathFirst" startOffset="50%">
+                        Happy Teachers Day! · 先生の日おめでとうございます！ · 선생님의 날 축하드립니다!
+                    </textPath>
+                </text>
+
+                <text class="curved-text second-circle-text">
+                    <textPath xlink:href="#pathSecond" startOffset="5%">
+                        ပျော်ရွှင်စရာ ဆရာများနေ့။ · สุขสันต์วันครู! · beati magistri diem!
+                    </textPath>
+                </text>
+
+                <text class="curved-text third-circle-text">
+                    <textPath xlink:href="#pathThird" startOffset="95%">
+                        Alles Gute zum Lehrertag! · La mulți ani de Ziua Profesorului! · ¡Feliz día del maestro!
+                    </textPath>
+                </text>
+                
+                <text class="curved-text last-circle-text">
+                    <textPath xlink:href="#pathLast" startOffset="25%">
+                        དགེ་རྒན་དུས་ཆེན་ལ་བཀྲ་ཤིས་བདེ་ལེགས་ཞུ། · يوم المعلم السعيد! · DUB.SAR ZI.KU.DA
+                    </textPath>
+                </text>
+            </svg>
+        </div>
+        <h1 class="Author">By TansanHNa</h1>
+    </div>
+    <script src="/JS/nav.js"></script>
+</body>
+</html>
