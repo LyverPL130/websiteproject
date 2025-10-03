@@ -1,0 +1,53 @@
+.poem-content {
+    min-height: 100vh;
+}
+.poem-content, .poem-title-content, .poem-paragraph-content {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+}
+.poem-h1 {
+    font-size: 2rem;
+}
+.poem-h4 {
+    font-size: 1rem;
+}
+.poem-paragraph {
+    font-size: 1.2rem;
+}
+
+
+@media screen and (max-width:767px) {
+    .poem-h1 {
+        font-size: 1rem;
+    }
+    .poem-h4 {
+        font-size: 0.5rem;
+    }
+    .poem-paragraph {
+        font-size: 0.8rem;
+    }
+    .poem-content {
+        overflow-y: scroll; 
+    }
+}
+@media screen and (min-width:767px) {
+    .poem-content {
+        margin-top: 110px;
+    }
+}
+@media screen and (min-height:568px){
+    .poem-content {
+        justify-content: center;
+        overflow-y: scroll; 
+    }
+    .poem-h1 {
+        font-size: 2rem;
+    }
+    .poem-h4 {
+        font-size: 1rem;
+    }
+    .poem-paragraph {
+        font-size: 1.1rem;
+    }
+}

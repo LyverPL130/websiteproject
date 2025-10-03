@@ -1,5 +1,22 @@
+
+html, body {
+  text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background:#000000;
+  color: #e0e0e0;
+  font-family: "Noto Sans", monospace;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll; 
+}
 .navbar {
-    position: sticky;
+    position: fixed;
+    min-width: 100%;
     z-index: 100;
     top: 0;
     min-height: 110px;
@@ -216,11 +233,9 @@ footer  {
   color: #8697a7;
 }
 .up-row h1 {
-  margin-left: 10px;
   font-size: 1.8em;
 }
 .up-row  p {
-  margin-left: 20px;
   font-size: 1em;
 }
 .address-content a, .address-content p{
@@ -231,12 +246,39 @@ footer  {
 .address-content a:hover {
   color:#81d4fa;
 }
+.nav-bar-icons-row {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100px; 
+}
+.media-link img{
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  margin: none;
+}
+.media-link {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-clip: content-box; 
+  text-decoration: none;
+}
+#Email img{
+  height: 65%;
+  width: 65%;
+}
 @media screen and (max-width:767px) {
   .navbar {
     display: None;
   }
   .mobile-menu {
-    position: sticky;
+    position: fixed;
     z-index: 100;
     top: 0;
     display: block;
