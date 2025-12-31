@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year 2026</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000;
+            font-family: "Arial Black", "Microsoft JhengHei", sans-serif;
+            user-select: none;
+        }
+
+        canvas {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        #start-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            cursor: pointer;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        #ui-layer {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            pointer-events: none;
+        }
+
+        .main-title {
+            margin-top: 15vh;
+            color: #fff;
+            font-size: 14vw;
+            font-weight: 900;
+            text-align: center;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px rgba(255,255,255,0.8);
+            line-height: 1;
+        }
+
+        .audio-control {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            pointer-events: auto;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid #fff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            z-index: 50;
+        }
+
+        .bottom-blessing {
+            margin-bottom: 5vh;
+            color: #fff;
+            font-size: 6vw;
+            font-weight: bold;
+            background: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border: 1px solid rgba(255,255,255,0.5);
+            white-space: nowrap;
+        }
+
+        .date-container {
+            position: absolute;
+            bottom: 15vh;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px;
+        }
+
+        .box-year {
+            border: 4px solid #FFD700;
+            padding: 5px 15px;
+            font-size: 10vw;
+            color: #FFD700;
+            background: rgba(0,0,0,0.7);
+        }
+
+        .box-date {
+            border: 2px double #00FFFF;
+            padding: 5px 15px;
+            font-size: 8vw;
+            color: #00FFFF;
+            border-radius: 10px;
+            background: rgba(0,0,0,0.7);
+        }
+
+        @media (min-width: 768px) {
+            .main-title { font-size: 8rem; }
+            .bottom-blessing { font-size: 2.5rem; }
+            .box-year { font-size: 5rem; }
+            .box-date { font-size: 3.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="start-overlay">點擊螢幕開啟新年祝福</div>
+
+    <canvas id="fireworksCanvas"></canvas>
+    
+    <div id="ui-layer">
+        <div class="audio-control" id="musicBtn">♫</div>
+
+        <div class="main-title">HAPPY<br>NEW YEAR</div>
+
+        <div class="date-container">
+            <div class="box-year">2026</div>
+            <div class="box-date">1/1</div>
+        </div>
+
+        <div class="bottom-blessing">
+            BLESSING FROM TLO.
+        </div>
+    </div>
+
+    <audio id="bgm" loop>
+        <source src="恭喜發財.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const canvas = document.getElementById('fireworksCanvas');
+        const ctx = canvas.getContext('2d');
+        const musicBtn = document.getElementById('musicBtn');
+        const bgm = document.getElementById('bgm');
+        const overlay = document.getElementById('start-overlay');
+
+        let width, height;
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        overlay.addEventListener('click', () => {
+            bgm.play();
+            overlay.style.display = 'none';
+        });
+
+        musicBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (!bgm.paused) {
+                bgm.pause();
+                musicBtn.style.opacity = "0.3";
+                musicBtn.innerHTML = "✖";
+            } else {
+                bgm.play();
+                musicBtn.style.opacity = "1";
+                musicBtn.innerHTML = "♫";
+            }
+        });
+
+        class Particle {
+            constructor(x, y, color, velocity) {
+                this.x = x;
+                this.y = y;
+                this.color = color;
+                this.velocity = velocity;
+                this.alpha = 1;
+                this.friction = 0.95;
+                this.gravity = 0.08;
+            }
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, 1.5, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+                ctx.restore();
+            }
+            update() {
+                this.velocity.x *= this.friction;
+                this.velocity.y *= this.friction;
+                this.velocity.y += this.gravity;
+                this.x += this.velocity.x;
+                this.y += this.velocity.y;
+                this.alpha -= 0.012;
+            }
+        }
+
+        class Firework {
+            constructor() {
+                this.x = width / 2;
+                this.y = height;
+                this.targetY = height * 0.15 + Math.random() * (height * 0.3);
+                
+                let angleLimit = width < 500 ? 0.3 : 0.8;
+                const angle = (Math.random() - 0.5) * angleLimit; 
+                const speed = 8 + Math.random() * 6;
+                this.vx = Math.sin(angle) * speed;
+                this.vy = -Math.cos(angle) * speed;
+
+                this.particles = [];
+                this.exploded = false;
+                this.color = `hsl(${Math.random() * 360}, 100%, 75%)`;
+            }
+            update() {
+                if (!this.exploded) {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    this.vy += 0.05;
+                    if (this.vy >= 0 || this.y <= this.targetY) {
+                        this.exploded = true;
+                        this.explode();
+                    }
+                }
+                this.particles.forEach((p, i) => {
+                    p.update();
+                    if (p.alpha <= 0) this.particles.splice(i, 1);
+                });
+            }
+            explode() {
+                const count = 70;
+                for (let i = 0; i < count; i++) {
+                    const angle = Math.random() * Math.PI * 2;
+                    const speed = Math.random() * 7 + 1;
+                    this.particles.push(new Particle(this.x, this.y, this.color, {
+                        x: Math.cos(angle) * speed,
+                        y: Math.sin(angle) * speed
+                    }));
+                }
+            }
+            draw() {
+                if (!this.exploded) {
+                    ctx.fillStyle = "white";
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, 3, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+                this.particles.forEach(p => p.draw());
+            }
+        }
+
+        const fireworks = [];
+        const stars = Array.from({ length: 60 }, () => ({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            size: Math.random() * 2
+        }));
+
+        function animate() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
+            ctx.fillRect(0, 0, width, height);
+
+            stars.forEach(s => {
+                ctx.fillStyle = `rgba(255, 255, 255, ${0.5 + Math.random() * 0.5})`;
+                ctx.fillRect(s.x, s.y, s.size, s.size);
+            });
+
+            if (Math.random() < 0.03) fireworks.push(new Firework());
+
+            fireworks.forEach((f, i) => {
+                f.update();
+                f.draw();
+                if (f.exploded && f.particles.length === 0) fireworks.splice(i, 1);
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+</body>
+</html>
