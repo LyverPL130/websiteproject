@@ -101,6 +101,63 @@ html {
 .pnkn h3, .ufls h3 {
     font-size: 1.5em;
 }
+/* 容器設定 */
+.death-list-container {
+    padding: 20px;
+    background-color: #1a1a1b; /* 皮諾康尼長夜黑 */
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* 核心：開啟橫向捲軸 */
+.scroll-wrapper {
+    display: flex;
+    overflow-x: auto;          /* 關鍵：內容超出時允許左右滑動 */
+    gap: 20px;                 /* 每個名單間的距離 */
+    padding-bottom: 15px;      /* 留點空間給捲軸 */
+    scroll-snap-type: x mandatory; /* 讓滑動時有「自動對齊」的高級感 */
+}
+
+/* 隱藏醜醜的預設捲軸 (選用) */
+.scroll-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+.scroll-wrapper::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 10px;
+}
+
+/* 單個名單成員：垂直分佈 */
+.death-item {
+    flex: 0 0 250px;           /* 關鍵：不壓縮寬度，固定 250px */
+    display: flex;
+    flex-direction: column;    /* 垂直排列 img 和 h3 */
+    align-items: center;
+    scroll-snap-align: center; /* 配合滑動對齊 */
+    background: #0c0c0c;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid #333;
+}
+
+.death-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;         /* 裁切成統一大小 */
+    border-radius: 8px;
+    filter: grayscale(80%);    /* 預設灰階，更有死亡感 */
+    transition: 0.3s;
+}
+
+.death-item:hover img {
+    filter: grayscale(0%);     /* 滑鼠移上去恢復彩色，像回憶閃現 */
+}
+
+.death-item h3 {
+    margin-top: 15px;
+    color: #f2f2f2;
+    font-size: 1.2em;
+}
 @media screen and (max-width:767px) {
     .yewu-area {
         flex-direction: column;
