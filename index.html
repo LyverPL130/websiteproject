@@ -1,116 +1,39 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>The Light 工作室</title>
+    <title>The Light Office - 首頁</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/CSS/index.css">
-    <link rel="stylesheet" href="/CSS/navbar.css">
+    <link rel="stylesheet" href="/CSS/nav-bar.css">
     <link rel="icon" href="/asset/LogoIcon.png" type="image/x-icon">
 </head>
-
 <body>
-    <nav class="navbar">
-        <a href="/index.html" class="home">
-            <img src="/asset/LogoIcon.png" class="logo-home">
-            <span>首頁</span>
-        </a>
-        <a href="/project.html">專案</a>
-        <a href="/docs.html">文檔</a>
-        <a href="#">支援</a>
-        <a href="/team/">團隊</a>
-        <span class="navbar-extend">≡</span>
-    </nav>
-    <nav class="mobile-menu">
-        <button id="mobile-menu">☰</button>
-        <div id="menu-content" class="menu-content">
-            <a class="linka" href="/">首頁</a>
-            <a class="link" id="project" href="/team/project/">專案</a>
-            <a class="link" id="docs" href="/docs/">文檔</a>
-            <a class="linka" href="/team/get-support.html">支援</a>
-            <a class="link" id="team">團隊</a>
-            <div class="a-content" id="teamdiv">
-                <a href="/team/">團隊首頁</a>
-                <a href="/team/project/">專案</a>
-                <a href="/team/about-us.html">關於我們</a>
-                <a href="/team/contact-us.html">聯絡我們</a>
-                <a href="/team/get-support.html">取得支援</a>
-                <a href="/team/members.html">團隊成員</a>
-            </div>
+    <nav>
+        <div class="nav-bar">
+            <button id="home">首頁</button>
+            <li style="display: none;">主層級</li>
+            <ul style="display: none;">內容</ul>
+            <button>></button>
         </div>
     </nav>
-<div class="notification-bar">
-    <div class="tag-left">[重大公告]:</div>
-    
-    <div class="marquee-container">
-        <span class="marquee-text">
-            由於TLO&TLS創立人學業原因，旗下大部分專案開始停止更新，恢復時間未定。少數特殊活動的網頁仍會繼續製作。
-        </span>
-    </div>
-
-    <div class="tag-right">#官網同步公告2026/02/23</div>
-</div>
-    <div class="title_content">
-        <div class="logo"></div>
-        <h1>The Light 工作室</h1>
-        <h2>探索、開發、創造</h2>
-        <p class="CopyRight">© 2025-2026<br>The Light Office. 版權所有，盜版必究</p>
-    </div>
-    <div class="project-content">
-        <div class="project" id="project1">
-            <h1>專案名稱</h1>
-            <h2>專案分類</h2>
-        </div>
-    </div>
-    <div class="category-content">
-        <div class="category" id="tlo">
-            <h1>分類名稱</h1>
-        </div>
-    </div>
-    <footer>
-        <div class="plate">
-            <div class="up-row">
-                <h1><img>The Light Office.</h1>
-                <p class="footer-EMail">Email: support@thelight.idv.tw</p>
-                <p class="footer-CopyRight">CopyRight: © 2025-2026 The Light Office. 版權所有，盜版必究</p>
-            </div>
-            <div class="address-content"><p><a href="/"><img>TLO</a> > <p>首頁</p></p></div>
-            <div class="down-row">
-                <div class="row">
-                    <h1>詳細資訊</h1>
-                    <h2><a class="footer-link" href="/team/">團隊詳情</a></h2>
-                    <h2><a class="footer-link" href="/team/about-us.html">關於我們</a></h2>
-                    <h2><a class="footer-link" href="/team/get-support.html">取得幫助</a></h2>
-                    <h2><a class="footer-link" href="/team/members.html">團隊成員</a></h2>
-                </div>
-                <div class="row">
-                    <h1>專案詳情</h1>
-                    <h2><a class="footer-link" href="/team/project/">查看全部</a></h2>
-                    <h2><a class="footer-link" href="/team/project/fastale/">仙家物語_</a></h2>
-                    <h2><a class="footer-link" href="/team/project/grade-up/">追分系列</a></h2>
-                </div>
-                <div class="row">
-                    <h1>相關文檔</h1>
-                    <h2><a class="footer-link" href="/docs/">文檔首頁</a></h2>
-                    <h2><a class="footer-link" href="/docs/terms/TERMofSERVICE.html">服務條款</a></h2>
-                    <h2><a class="footer-link" href="/docs/terms/PRIVACY.html">隱私權政策</a></h2>
-                </div>
-                <div class="row">
-                    <h1>聯絡我們</h1>
-                    <div class="nav-bar-icons-row">
-                        <p id="Facebook"><a class="media-link" href="https://www.facebook.com/profile.php?id=61579071759484"><img class="nav-bar-icons" src="/asset/nav-bar-icons/Facebook-logo.png"></a></p>
-                        <p id="Instagram"><a class="media-link" href="https://www.instagram.com/thelightoffice"><img class="nav-bar-icons" src="/asset/nav-bar-icons/Instagram-logo.png"></a></p>
-                        <p id="Join-DC"><a class="media-link" href="/invitation/discord-server.html"><img class="nav-bar-icons" src="/asset/nav-bar-icons/Discord-logo.png"></a></p>
-                        <p id="Email"><a class="media-link" href="mailto:support@thelight.idv.tw"><img class="nav-bar-icons" src="/asset/nav-bar-icons/Email-logo.png"></a></p>
-                    </div>
+    <div class="content1">
+        <div class="left-content">
+            <div class="left-words">
+                <h1>The Light 工作室</h1>
+                <div class="flex-words-turn-side">
+                    <h2>爲每一處黑暗</h2>
+                    <h2>帶來一盞創新的燈</h2>
                 </div>
             </div>
-            <div class="footer-CopyRight-content">
-                <p>© 2025-2026 The Light Office. 版權所有，盜版必究</p>
+        </div>
+        <img class="logo" src="none" style="display:none;">
+        <div class="bottom-content">
+            <div class="bottom-content-content">
+                <h1>The Light Office</h1>
+                <h2>探索、開發、創造</h2>
             </div>
         </div>
-    </footer>
-     <script src="/JS/nav.js"></script>
+    </div>
 </body>
 </html>

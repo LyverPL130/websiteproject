@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生日快樂！</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            font-family: 'Segoe UI', Microsoft JhengHei, sans-serif;
+            overflow: hidden;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h1 {
+            color: white;
+            font-size: 5rem;
+            text-shadow: 2px 4px 10px rgba(0,0,0,0.3);
+            text-align: center;
+            padding: 20px;
+            z-index: 1;
+        }
+
+        /* 裝飾性的小元素 */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>凃精湛(SI-Jing-Dan)<br>生日快樂！！</h1>
+    <h2 style="font-size: 1.5rem; color: rgba(255,255,255,0.9); margin-top: 20px; font-weight: normal; cursor: pointer;">
+        點擊任何地方播放音樂...
+    </h2>
+
+    <h3 style="position: absolute; bottom: 30px; width: 100%; text-align: center; color: #fff; letter-spacing: 2px; font-size: 1.2rem; opacity: 0.8;">
+        Blessing From JHG-ARTWORKS.
+    </h3>
+    <audio id="bgMusic" loop>
+        <source src="./35-生日快樂歌爵士變奏曲-jazzy-happy-birthday-piano2017.mp3" type="audio/mpeg">
+        您的瀏覽器不支持音頻元素。
+    </audio>
+
+    <script>
+        // 由於瀏覽器安全政策，通常需要使用者點擊頁面後才能播放音樂
+        document.body.addEventListener('click', function() {
+            var audio = document.getElementById('bgMusic');
+            if (audio.paused) {
+                audio.play();
+            }
+        });
+    </script>
+</body>
+</html>
